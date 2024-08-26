@@ -5,6 +5,7 @@ import colors from "colors";
 import cookieParser from "cookie-parser";
 import connectWithMongoDB from "./config/db.js";
 import userRoutes from "./routes/userRoutes.js";
+import hotelRoute from "./routes/hotelRoutes.js";
 // Init Express
 const app = express();
 
@@ -24,6 +25,7 @@ app.use(cookieParser());
 
 // Routes
 app.use("/api/v1/user", userRoutes);
+app.use("/api/v1/hotel", hotelRoute);
 
 // Listen Server
 app.listen(PORT, () => {
