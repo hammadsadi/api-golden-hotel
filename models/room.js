@@ -1,26 +1,38 @@
 import mongoose from "mongoose";
 const roomsSchema = new mongoose.Schema(
   {
-    name: {
+    hotel: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Hotel",
+      required: true,
+    },
+    roomName: {
       type: String,
       required: true,
     },
-    email: {
+    type: {
       type: String,
       required: true,
-      unique: true,
     },
-    photo: {
+    amenities: {
       type: String,
       default: null,
     },
-    isActive: {
-      type: Boolean,
-      default: true,
+    rentPerDay: {
+      type: Number,
+      required: true,
     },
-    isAdmin: {
-      type: Boolean,
-      default: false,
+    bedrooms: {
+      type: Number,
+      required: true,
+    },
+    roomNumber: {
+      type: Number,
+      required: true,
+    },
+    photo: {
+      type: Array,
+      default: null,
     },
   },
   { timestamps: true }
